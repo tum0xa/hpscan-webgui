@@ -1,0 +1,38 @@
+{% extends 'hpscan/base.html' %}
+{% load static %}
+{% block title %}HP Scan{% endblock%}
+{% block content %}
+    <p>
+        <button class="col-12 btn btn-secondary m-1" type="button" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+            Settings
+        </button>
+        
+        <button class="col-12 btn btn-success m-1" type="button" id="scan">
+            Scan
+        </button>
+    </p>
+    <div class="collapse" id="collapseForm" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupColorMode">Color mode</label>
+            </div>
+            <select class="custom-select" id="inputGroupColorMode">
+                <option selected value="color">Color</option>
+                <option value="gray">Gray</option>
+                <option value="lineart">Lineart</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Resolution</span>
+            </div>
+            <input type="text" class="form-control" id="inputResolution" aria-label="Resolution" value="300">
+            <div class="input-group-append">
+                <span class="input-group-text">DPI</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/hpscan.js' %}"></script>
+{% endblock %}
