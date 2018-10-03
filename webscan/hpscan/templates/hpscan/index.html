@@ -1,4 +1,5 @@
 {% extends 'hpscan/base.html' %}
+{% load static %}
 {% block title %}HP Scan{% endblock%}
 {% block content %}
     <p>
@@ -25,10 +26,13 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Resolution</span>
             </div>
-            <input type="text" class="form-control" aria-label="Resolution" value="300">
+            <input type="text" class="form-control" id="inputResolution" aria-label="Resolution" value="300">
             <div class="input-group-append">
                 <span class="input-group-text">DPI</span>
             </div>
         </div>
     </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/hpscan.js' %}"></script>
 {% endblock %}

@@ -9,6 +9,7 @@ def index(request):
 # Create your views here.
 def scan(request):
     options = request.GET.dict()
+    print(options)
     scan_process = Scanner(options)
     scan_process.start()
     return HttpResponse("OK")
